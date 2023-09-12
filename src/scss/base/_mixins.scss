@@ -1,0 +1,33 @@
+//directivas
+@use 'variables'as v;
+
+
+//Ejemplo de mixin sirve como una funcion
+// @mixin heading ($color, $border-radius: false) { //definir el parametro
+//     text-transform: uppercase;
+//     font-size: 2.4rem;
+//     color: $color;
+//     background-color: black;
+
+//     @if $border-radius {
+//         border-radius: 1rem;
+//     }
+// }   
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}

@@ -1,0 +1,48 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.video {
+    position: relative ; //para encimar
+    max-height: 70rem; 
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden; //se corta la parte del video hasta donde puse el max-height
+    
+    .overlay {
+        position: absolute;
+        background: rgb(23,252,53);
+        background: radial-gradient(circle, rgba(23,252,53,0.49341743533350846) 0%, rgba(0,0,0,0.7091037098433124) 100%); 
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; // da acceso a alinear con flexbox verticalmente
+        justify-content: center;
+        
+    }
+    
+    video{
+        width: auto;
+        @include m.tablet{
+            width: 100%;
+        }
+        display: block;
+    }
+}
+
+.contenido-video{
+    z-index: 1; //representa como se mostraran las hojas, se puede cambiar ese orden
+    h2{
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+
+    p{
+        background-color: v.$verde;
+        padding: .8rem;
+        display: inline-block; //utiliza solo el espacio requerido
+        color: v.$blanco;
+        font-weight: 700;
+        margin: 0;
+    }
+}

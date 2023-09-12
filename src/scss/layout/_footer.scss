@@ -1,0 +1,15 @@
+@use 'base/variables' as v;
+
+/** Footer **/
+.footer{
+    background-color: v.$negro;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    width: 100%;
+    position: relative;
+}
+
+.footer p{
+    color: v.$blanco;
+    text-align: center;
+}

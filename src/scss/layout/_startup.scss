@@ -1,0 +1,37 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sobre-empresa {
+    display: grid; //para agregar columnas
+    grid-template-columns: repeat(2, 2fr); //crear dos columnas de una fraccion cada una
+    column-gap: 5rem;
+    padding: 5rem 0;
+}
+
+.contenido-empresa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+        margin-bottom: 2rem;
+        
+    }
+    
+    .quienes {
+        color: v.$verdeClaro;
+        font-weight: 1000;
+        font-size: large;
+    }
+}
+
+.grid{
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10rem;
+    margin: 10rem;
+    
+}
+.contenidoMVV {
+   margin: 2rem;
+}

@@ -1,0 +1,111 @@
+@use 'variables' as v; 
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 100%;
+}
+
+*,
+*:before,  // el padding no representa un problema gracias al snippet
+*,:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem; //tamanio base para las fuentes
+    height: inherit;
+    min-height: 100%;
+    width: 100%;
+}
+
+p {
+    font: 2rem;
+    color: v.$negro;
+    line-height: 1.5; //interlineado
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 150rem;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin : 0 0 5rem 0; //derecha, izquierda, arriba y abajoS
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4.6rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+img {
+    max-width: 100%;
+    //display: block  ;
+}
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    justify-content: right;
+    flex-direction: column;
+ }
+
+ li {
+    float: left ;
+    flex-direction: column;
+ }
+
+ nav {
+    margin: 0;
+ }
+
+ /* Boton */
+.boton{
+    background-color: v.$negro;
+    color: v.$blanco;
+    padding: 2rem;
+    margin-top: 4rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    text-decoration: none;
+    width: 50%;
+
+    text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.w-sm-100 {
+    width: 100%;
+
+}
+
+.contenedor_boton {
+    margin-left: 0;
+    display: flex;
+    justify-content: center ;
+    
+}
+
