@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+
+.alerta {
+    padding: .5rem;
+    width: 100%;
+    font-weight: bold;
+    color: v.$negro;
+    margin: 0 auto;
+    text-transform: uppercase;
+    margin: .5rem;
+
+    &.error{
+        background-color: v.$rojo;
+    }
+
+    &.exito {
+        background-color: v.$verde;
+        color: v.$negro;
+    }
+}
+
+table.productos{
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    text-align: center;
+
+    thead {
+        background-color: v.$verde;
+
+        th {
+            color: v.$blanco;
+            padding: 2rem;
+        }
+        
+    }
+
+    .imagen-tabla{
+        width: 10rem;
+
+    }
+
+
+}
+
+.imagen-small {
+    width: 10rem;
+}
+

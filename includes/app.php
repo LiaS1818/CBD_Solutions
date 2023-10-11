@@ -1,4 +1,8 @@
 <?php
 
-define('TEMPLATES_URL', __DIR__ . '/templates'); //__dir__ Toma la ubicacion del archivo actual
-define('FUNCIONES_URL',__DIR__ .'funciones.php');// esto hace codigo portable
+require 'funciones.php';
+require 'config/database.php';
+require __DIR__ . '/../vendor/autoload.php';
+
+use App\Producto;
+

@@ -31,3 +31,41 @@
         @content;
     }
 }
+
+@mixin boton($bgColor, $display ) {
+    background-color: $bgColor;
+    color: v.$blanco;
+    padding: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    text-decoration: none;
+    width: 50%;
+    display: $display;
+    text-align: center;
+    border: none;
+    margin:  2rem auto;
+
+    &:hover {
+        background-color: darken($bgColor, 5);
+        cursor: pointer;
+    }
+}
+
+@mixin boton_submit($bgColor, $display) {
+    background-color: $bgColor;
+    border: none;
+    border-radius: 1rem;
+    font-size: 2rem;
+    padding: 2rem;
+    display: $display;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+    width: 100%;
+
+    &:hover {
+        background-color: darken($bgColor, 5);
+        cursor: pointer;
+    }
+}

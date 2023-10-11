@@ -9,6 +9,6 @@ function conectarBD() : mysqli {
     }
 
     return $db;
-}
+} 
 
 ?>

@@ -1,0 +1,75 @@
+@use 'base/variables' as v;
+
+
+/** Grid **/
+
+// .gridProductos {
+//     display: grid;
+//     grid-template-columns: repeat (2, 1fr);
+//     gap: 2rem;
+// }
+
+@media (min-width: 768px ) {
+    .gridProductos{
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.producto__imagen{
+    width: 100%;
+
+}
+
+.contenedor h1{
+    text-align: center;
+}
+.producto{  
+    background-color: v.$blanco;
+    padding: 1rem;
+}
+
+.producto__nombre{
+    font-size: 4rem;
+}
+.producto__precio{
+    font-size: 2.8rem;
+}
+
+.producto__nombre,
+.producto__precio{
+
+    margin: 1rem 0;
+    text-align: center;
+    line-height:  1.2;
+}
+
+
+
+
+/** Producto Vista cerca **/
+
+
+@media (min-width: 768px) {
+    .producto__ver{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario__producto{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.formulario__campo{
+    border: 1rem solid v.$negro;
+    font-size: 2rem;
+    padding: 1rem;
+    appearance: none;
+}
+
+

@@ -1,6 +1,6 @@
 
 <?php
-     require 'includes/funciones.php';
+    require 'includes/app.php';
      incluirTemplate('header');
 ?>
 
@@ -9,18 +9,18 @@
             <!-- Tiene que estar dentro del div de video para encimarlo correctamente -->
             <div class="contenedor contenido-video"> 
                 <h2> Green Vitality CBD Solutions </h2>
-                <p>Septiembre 2023, Tlaquepaque México </p>
+                <p>Octubre 2023, Tlaquepaque México </p>
             </div>
             
         </div>
         <video autoplay muted loop>
-            <source src="video/video_empresa.mp4" type="video/mp4">
+            <source src="video/video_empresa.mp4" type="video/mp4" >
         </video>
     </div>
 
     <section class="contenedor sobre-empresa">
         <div class="imagen">
-            <img src="img/imagen_manos_planta.jpg" alt="Imagen Vacalista Festival">
+            <img src="img/imagen-cbd.png" alt="Imagen Vacalista Festival">
         </div>
         <div class="contenido-empresa">
             <h2>Green Vitality CBD Solutions</h2>

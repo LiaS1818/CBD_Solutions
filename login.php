@@ -1,28 +1,96 @@
 <?php
-    require 'includes/funciones.php';
+    require 'includes/app.php';
+    $db = conectarBD();
+
+    
+    $email = '';
+    $password = '';
+
+    $errores = [];
+    // Autenticar al usario
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+        $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) ;
+        $password = mysqli_real_escape_string($db, $_POST['password']);
+
+        if (!$email) {
+            $errores[] = "El email es obligatorio o no es valido";
+        }
+        if (!$password) {
+            $errores[] = "El password es obligatorio";
+        }
+
+        if(empty($errores)){
+
+            //Revisar si el usuario existe
+            $query = "SELECT * FROM clientes WHERE  email = '${email}'";
+            //Leer los resultados
+            $resultado = mysqli_query($db, $query);
+
+            var_dump($resultado);
+
+            //Comprobar que hay resultados en la consulta
+            if ($resultado ->num_rows) {
+                //Comprobar que la contrasena sea correcta
+                $usuario = mysqli_fetch_assoc($resultado);
+
+                //Verificar si el password es correcto o no
+                $auth = password_verify($password, $usuario['contrasena']);
+                var_dump($auth);
+                 if ($auth) {
+                   //El usario esta autenticado
+                   session_start();
+
+                   // Llenar el arreglo de la sesion
+                   $_SESSION['usuario'] = $usuario['email'];
+                   $_SESSION['login'] = true;
+
+                   header('Location: /CBD_Solutions/admin');
+
+                }else {
+                    $errores = "El password es incorrecto";
+                }
+            }else{
+                $errores[] = "El usuario no existe";
+            }
+        }
+    }
+
+?>
+
+
+<?php
     incluirTemplate('header');
 ?>
 
-    <div class="contenedor_form">
-        <form class="formulario sombra">
-            <fieldset>
-                <legend>Login</legend>
-                <div class="contenedor-campos"><!-- Este campo nos ayudará a editar cada uno por individual-->
-    
-                    <div class="campo">
-                        <label>Correo</label>
-                        <input class="input-text" type="email" placeholder="Tu email">
-                    </div>
-                    
-                    <div class="campo">
-                        <label>Contraseña</label>
-                        <input  class="input-text" type="password" placeholder="Tu constraseña">
-                    </div>
-                </div> <!-- Contenedor de los campos-->
-                <div class="contenedor_boton"> <!-- Dos clases-->
-                    <input class="boton w-ms-100" type="submit" value="Eniviar">
+    <div class="contenedor_form" >
+        
+        <form class="formulario sombra" action="login.php" method="POST" >
+
+            <?php foreach ($errores as $error): ?>
+                <div class="alerta error">
+                    <?php echo $error ?>
                 </div>
-            </fieldset>
+            <?php endforeach; ?>
+
+                <fieldset>
+                    <legend>Login</legend>
+                    <div class="contenedor-campos"><!-- Este campo nos ayudará a editar cada uno por individual-->
+        
+                        <div class="campo">
+                            <label>Correo</label>
+                            <input class="input-text" type="email" placeholder="Tu email" name="email" require >
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Contraseña</label>
+                            <input  class="input-text" type="password" placeholder="Tu constraseña" name="password" require>
+                        </div>
+                    </div> <!-- Contenedor de los campos-->
+                    <div class="contenedor_boton"> <!-- Dos clases-->
+                        <input class="boton-admin" type="submit" value="Entrar">
+                    </div>
+                </fieldset>
         </form>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br>
