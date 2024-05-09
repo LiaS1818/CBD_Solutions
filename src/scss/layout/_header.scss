@@ -2,10 +2,11 @@
 @use 'base/mixins' as m;
 
 .header {
-    background: v.$negro;
+    background: v.$verde;
     @include m.telefono{
         
     }
+
     h1{
         text-align: center;
         color: v.$blanco;
@@ -23,6 +24,8 @@
         }
         align-items: center;
     }
+
+   
 }
 
 .navegacion-principal {
@@ -30,23 +33,54 @@
     @include m.tablet{
         display: flex; //alienar horizontalmente
         gap: 2rem; //separacion
-
+        
 
     }
     a{
-        display: block; // hace el bloque como si fuera un solo parrafo a lo largo de toda la pantalla
+        display: none; // hace el bloque como si fuera un solo parrafo a lo largo de toda la pantalla
         text-align: center;
-        color: v.$blanco;
+        color: v.$negro;
         font-size: 2rem;
         margin-bottom: 1rem;
         @include m.tablet{
             margin: 0;
+            display: flex;
         }
 
         &:hover{
             color: v.$amarillo;
         }
     }
+    .nav_input:checked ~ a {
+        display: flex;
+    }
+  
+
 }
 
+     
+    
+
+.ventanita{
+    height: 10rem;
+    align-items: center;
+    
+}
+
+.logo {
+    align-content: center;
+    padding: 1rem 15rem;
+    @include m.tablet{
+        display: none;
+    }
+}
+
+
+.nav_input {
+    padding-left: 10rem;
+    opacity: 0;
+    @include m.tablet{
+        display: none;
+    }
+}
 

@@ -2,27 +2,29 @@
 
 require 'vendor/autoload.php';
 
-$html = '
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Titulo del docuemtno </h1>
-</body>
-</html>
+ob_start();
+include 'documento_confirmacion.php';
+$html = ob_get_clean();
 
-';
 
 use Dompdf\Dompdf;
 
 $dompdf = new Dompdf();
-$dompdf->load_html($html);
+$options = $dompdf->getOptions();
+$options->set(array('isRemoteEnabled'=> true));
+$dompdf->setOptions($options);
+$dompdf->loadHtml($html);
+$dompdf->setPaper('letter');
+
+
 $dompdf->render();
-$dompdf->stream("documento.pdf", array('Attachment'=>'0'));
+
+//adjuntar para el correo
+
+$pdfOutput = $dompdf->output();
+$pdfFile = 'Reporte.pdf';
+file_put_contents($pdfFile, $pdfOutput);
+// $dompdf->stream("Reporte.pdf", array('Attachment'=>'0'));
 
 ?>
 

@@ -19,6 +19,7 @@
     </div>
 
     <section class="contenedor sobre-empresa">
+    
         <div class="imagen">
             <img src="img/imagen-cbd.png" alt="Imagen Vacalista Festival">
         </div>
@@ -26,7 +27,6 @@
             <h2>Green Vitality CBD Solutions</h2>
             <p class="quienes">¿Quienes somos?</p>
             <p>Somos una Startup que se enfoca en la creación de productos de alta calidad con CBD para brindar a nuestros clientes una experiencia gastronómica única y saludable. Nos enfocamos en la calidad, la innovación, la salud y la sostenibilidad para ofrecer una opción única en el mercado de la comida saludable y el CBD.</p>
-            
         </div>
     </section>
 
@@ -47,6 +47,12 @@
             <p>Sostenibilidad: <br> Nos preocupamos por el medio ambiente, por lo que nos esforzamos en utilizar envases y materiales sostenibles.</p>
         </div>
     </div>
+
+    <div class="grid">
+        <php? 
+    </div>
+
+
     
     
 </body>

@@ -458,25 +458,6 @@ nav {
 }
 
 .formulario__submit {
-  background-color: #f3871a;
-  border: none;
-  border-radius: 1rem;
-  font-size: 2rem;
-  padding: 2rem;
-  display: grid;
-  transition: background-color 0.3s ease;
-  grid-column: 1/3;
-  width: 100%;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.formulario__submit:hover {
-  background-color: #e77a0c;
-  cursor: pointer;
-}
-
-.boton-check {
   background-color: #13bdf3;
   border: none;
   border-radius: 1rem;
@@ -486,9 +467,26 @@ nav {
   transition: background-color 0.3s ease;
   grid-column: 1/3;
   width: 100%;
+}
+.formulario__submit:hover {
+  background-color: #0baee1;
+  cursor: pointer;
+}
+
+.boton-check {
+  background-color: #13bdf3;
   color: white;
+  padding: 2rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-weight: bold;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  width: 50%;
+  display: block;
+  text-align: center;
+  border: none;
+  margin: 2rem auto;
 }
 .boton-check:hover {
   background-color: #0baee1;
@@ -503,11 +501,6 @@ nav {
   margin-left: 0;
   display: flex;
   justify-content: center;
-}
-
-#mapa {
-  height: 400px; /* Puedes ajustar la altura según tus necesidades */
-  width: 100%; /* Otra opción: width: 100% para que se ajuste al ancho de su contenedor */
 }
 
 .header {

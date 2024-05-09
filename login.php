@@ -1,13 +1,15 @@
 <?php
-    require 'includes/app.php';
+
+ require_once 'includes/app.php';
+
     $db = conectarBD();
 
-    
+
     $email = '';
     $password = '';
 
     $errores = [];
-    // Autenticar al usario
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) ;
@@ -40,12 +42,13 @@
                  if ($auth) {
                    //El usario esta autenticado
                    session_start();
-
+              
                    // Llenar el arreglo de la sesion
                    $_SESSION['usuario'] = $usuario['email'];
                    $_SESSION['login'] = true;
+                   $_SESSION['id'] = $usuario['id'];
 
-                   header('Location: /CBD_Solutions/admin');
+                   header('Location: /CBD_Solutions/productos.php');
 
                 }else {
                     $errores = "El password es incorrecto";
@@ -55,7 +58,6 @@
             }
         }
     }
-
 ?>
 
 
@@ -88,7 +90,7 @@
                         </div>
                     </div> <!-- Contenedor de los campos-->
                     <div class="contenedor_boton"> <!-- Dos clases-->
-                        <input class="boton-admin" type="submit" value="Entrar">
+                        <input class="boton-admin" type="submit" value="Entrar" name="send">
                     </div>
                 </fieldset>
         </form>

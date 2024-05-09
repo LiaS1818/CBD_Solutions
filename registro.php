@@ -64,10 +64,14 @@
             $query = " INSERT INTO clientes (nombre, apellido, email, contrasena, telefono, nacimiento) VALUES ('$nombre', '$apellido', 
             '$email', '$passwordHash', '$telefono', '$nacimiento')";
 
+            
             $resultado = mysqli_query($db, $query);
 
             if($resultado){
-                echo "insetado correctamente";
+                
+                echo "<script> alert('Cuenta creada con exito'); </script>";
+                header('Location: login.php');
+                
             }
         }
         

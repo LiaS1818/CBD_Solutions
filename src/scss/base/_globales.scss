@@ -11,7 +11,7 @@ html {
 *,
 *:before,  // el padding no representa un problema gracias al snippet
 *,:after {
-    box-sizing: inherit;
+    // box-sizing: inherit;
 }
 
 body {
@@ -80,7 +80,7 @@ ul{
  /* Botones */
 
 .boton-amarillo-block{
-    @include m.boton(v.$amarillo, block );
+    @include m.boton(v.$amarillo, block);
 }
 
 .boton-rojo-block {
@@ -88,7 +88,7 @@ ul{
 }
 
 .boton-verde-block {
-    @include m.boton(v.$verde, block )
+    @include m.boton(v.$verde, block)
 }
 .boton-admin {
     @include m.boton(v.$negro, inline-block)
@@ -96,6 +96,10 @@ ul{
 
 .formulario__submit{
     @include m.boton_submit(v.$amarillo, grid);
+}
+
+.boton-check{
+    @include m.boton_submit(v.$azul, grid)
 }
 
 .w-sm-100 {
@@ -109,4 +113,9 @@ ul{
     justify-content: center ;
     
 }
+
+#mapa {
+    height: 400px; /* Puedes ajustar la altura según tus necesidades */
+    width: 100%; /* Otra opción: width: 100% para que se ajuste al ancho de su contenedor */
+  }
 
